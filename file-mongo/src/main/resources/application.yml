@@ -1,0 +1,21 @@
+server:
+  tomcat:
+    uri-encoding: utf-8
+  servlet:
+    encoding:
+      force: true
+      enabled: true
+      charset: UTF-8
+spring:
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 20MB
+  data:
+    mongodb:
+      host: 47.100.93.46
+      username: micheal.wang
+      password: mingkai13
+      port: 27017
+      database: storage
+      authentication-database: storage
