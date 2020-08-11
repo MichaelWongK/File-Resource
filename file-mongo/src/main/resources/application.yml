@@ -6,6 +6,7 @@ server:
       force: true
       enabled: true
       charset: UTF-8
+  port: 8088
 spring:
   servlet:
     multipart:
@@ -13,7 +14,7 @@ spring:
       max-request-size: 20MB
   data:
     mongodb:
-      host: 47.100.93.46
+      host: www.micheal.wang
       username: micheal.wang
       password: mingkai13
       port: 27017
