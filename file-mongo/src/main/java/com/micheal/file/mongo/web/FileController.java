@@ -53,13 +53,12 @@ public class FileController {
     /**
      * 文件上传
      *
-     * @param files
+     * @param multipartFile
      * @return
      */
     @PostMapping("upload")
-    public String upload(MultipartFile[] files) {
-        fileService.upload(files);
-        return "redirect:/mongo";
+    public String upload(MultipartFile[] multipartFile) {
+        return fileService.upload(multipartFile);
     }
 
     /**

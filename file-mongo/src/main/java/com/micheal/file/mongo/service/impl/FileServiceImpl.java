@@ -11,6 +11,7 @@ import com.mongodb.client.gridfs.model.GridFSFile;
 import org.apache.commons.io.FilenameUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.bson.Document;
+import org.bson.types.ObjectId;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.data.mongodb.gridfs.GridFsCriteria;
@@ -83,9 +84,9 @@ public class FileServiceImpl implements FileService {
     }
 
     @Override
-    public void upload(MultipartFile[] files) {
+    public String upload(MultipartFile[] files) {
         if (files.length == 0) {
-            return;
+            return null;
         }
 
         for (MultipartFile file : files) {
@@ -108,11 +109,14 @@ public class FileServiceImpl implements FileService {
                     .append(FileConstant.CONTENT_TYPE, contentType.get())
                     .append(FileConstant.FILE_TYPE, FileTypeEnum.getFileType(originalFilename));
             try {
-                gridFsTemplate.store(file.getInputStream(), filename, contentType.get(), document);
+                ObjectId objectId = gridFsTemplate.store(file.getInputStream(), filename, contentType.get(), document);
+                return objectId.toString();
             } catch (IOException e) {
                 e.printStackTrace();
             }
         }
+
+        return null;
     }
 
     @Override

@@ -105,7 +105,7 @@
         <!-- 上传文件 -->
         <div class="upload_box">
             <form action="/mongo/upload" method="post" enctype="multipart/form-data">
-                <input type="file" name="files" multiple>
+                <input type="file" name="multipartFile" multiple>
                 <input type="submit" value="上传">
             </form>
         </div>
@@ -130,7 +130,7 @@
             <td th:text="${row.uploadDate}">xx</td>
             <td>
                 <a href="javascript:void(0)" th:onclick="readById([[${row.id}]]);">打开</a>
-                <a href="javascript:void(0)" th:onclick="deleteById([[${row.id}]]);">删除</a>
+<!--                <a href="javascript:void(0)" th:onclick="deleteById([[${row.id}]]);">删除</a>-->
             </td>
         </tr>
         </tbody>

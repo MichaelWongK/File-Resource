@@ -25,8 +25,9 @@ public interface FileService {
     /**
      * 文件上传
      * @param files
+     * @return
      */
-    void upload(MultipartFile[] files);
+    String upload(MultipartFile[] files);
 
     /**
      * 根据文件ID获取唯一文件

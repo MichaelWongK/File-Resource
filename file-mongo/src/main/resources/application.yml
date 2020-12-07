@@ -6,7 +6,7 @@ server:
       force: true
       enabled: true
       charset: UTF-8
-  port: 8088
+  port: 10020
 spring:
   servlet:
     multipart:
@@ -17,7 +17,7 @@ spring:
       host: www.micheal.wang
 #      host: 49.234.52.233
       username: micheal.wang
-      password: mingkai13
+      password: 
       port: 27017
       database: storage
       authentication-database: storage
